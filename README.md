@@ -2,7 +2,7 @@
 
 Validate the current property is a mailto link
 
-E.g it is in the format mailto:<email>
+E.g it is in the format mailto:123@example.com
 
 ## Installation
 
