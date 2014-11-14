@@ -1,0 +1,15 @@
+{
+  "name": "validity-mailto-link",
+  "version": "0.0.1",
+  "description": "validate that the given property is a mailto link",
+  "main": "validator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Parnell <me@benparnell.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:benjaminparnell/validity-mailto-link"
+  }
+}
