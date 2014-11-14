@@ -1,4 +1,4 @@
-var isMailto = require('../')
+var isMailto = require('../')()
   , assert = require('assert')
 
 describe('Mailto validation', function () {
@@ -10,7 +10,9 @@ describe('Mailto validation', function () {
     , 'mailto:test-test@benparnell.com'
     , 'mailto:test+test@benparnell.com'
     ].forEach(function (value) {
-      assert.equal(isMailto(value), true)
+      isMailto('link', 'link', { link: value }, function (error, valid) {
+        assert.equal(valid, undefined)
+      })
     })
   })
 
@@ -22,7 +24,10 @@ describe('Mailto validation', function () {
     , 1
     , '1'
     ].forEach(function (value) {
-      assert.equal(isMailto(value), false)
+      isMailto('link', 'link', { link: value }, function (error, valid) {
+        assert.notEqual(valid, undefined)
+        assert.equal(valid, 'link must be a valid mailto link')
+      })
     })
   })
 

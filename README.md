@@ -27,7 +27,7 @@ var schema = schemata(
       }
     , email:
       { type: String
-      , validators: { all: [ validateMailtoLink ] }
+      , validators: { all: [ validateMailtoLink() ] }
       }
     })
 
