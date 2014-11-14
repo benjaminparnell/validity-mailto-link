@@ -1,15 +1,26 @@
 {
   "name": "validity-mailto-link",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "validate that the given property is a mailto link",
   "main": "validator.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/jshint .",
+    "checkStyle": "./node_modules/.bin/jscs .",
+    "pretest": "npm run-script lint && npm run-script checkStyle",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test",
+    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage",
+    "prepublish": "npm test && npm prune"
   },
   "author": "Ben Parnell <me@benparnell.com>",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git@github.com:benjaminparnell/validity-mailto-link"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.2",
+    "jscs": "1.3.0",
+    "jshint": "^2.5.10",
+    "mocha": "^2.0.1"
   }
 }
