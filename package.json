@@ -1,6 +1,6 @@
 {
   "name": "validity-mailto-link",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "validate that the given property is a mailto link",
   "main": "validator.js",
   "scripts": {
