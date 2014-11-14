@@ -31,4 +31,17 @@ describe('Mailto validation', function () {
     })
   })
 
+  it('should correctly validate valid mailto links with options', function () {
+    [
+      'mailto:me@benparnell.com?subject=WIN'
+    , 'mailto:me@benparnell.com?body=text'
+    , 'mailto:me@benparnell.com?cc=123@example.com'
+    , 'mailto:me@benparnell.com?cc=123@example.com&subject=WIN&body=text'
+    ].forEach(function (value) {
+      isMailto('link', 'link', { link: value }, function (error, valid) {
+        assert.equal(valid, undefined)
+      })
+    })
+  })
+
 })
