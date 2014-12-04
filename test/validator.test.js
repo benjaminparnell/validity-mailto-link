@@ -44,4 +44,16 @@ describe('Mailto validation', function () {
     })
   })
 
+  it('should correctly validate a mailto link with options that have spaces in them', function () {
+    [
+      'mailto:me@benparnell.com?subject=WIN WITH SPACES'
+    , 'mailto:me@benparnell.com?subject=WIN WITH SPACES&body=BODY WITH SPACES'
+    , 'mailto:me@benparnell.com?subject=WINNOSPACES&body= BODY WITH SPACES'
+    ].forEach(function (value) {
+      isMailto('link', 'link', { link: value }, function (error, valid) {
+        assert.equal(valid, undefined)
+      })
+    })
+  })
+
 })
