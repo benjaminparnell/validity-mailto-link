@@ -1,4 +1,4 @@
-# validity-mailto-link
+# validity-mailto-link [![Build Status](https://travis-ci.org/benjaminparnell/validity-mailto-link.svg?branch=master)](https://travis-ci.org/benjaminparnell/validity-mailto-link)
 
 Validate the current property is a mailto link
 
